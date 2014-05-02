@@ -170,7 +170,7 @@ class OptionManagerTestCase(TestCase):
                 try:
                     value = F(*args, **kwargs)
                     counters[F.__name__] += 1
-                except Exception, e:
+                except Exception as e:
                     counters['_' + F.__name__] += 1
                     raise e
                 return value

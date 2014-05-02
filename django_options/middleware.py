@@ -19,7 +19,7 @@ class OptionsLoaderMiddleware(object):
                 raise ImproperlyConfigured('%s isn\'t a options loader module' % loader_path)
             try:
                 mod = import_module(mw_module)
-            except ImportError, e:
+            except ImportError as e:
                 raise ImproperlyConfigured('Error importing options loader %s: "%s"' % (mw_module, e))
             try:
                 mw_class = getattr(mod, mw_classname)
